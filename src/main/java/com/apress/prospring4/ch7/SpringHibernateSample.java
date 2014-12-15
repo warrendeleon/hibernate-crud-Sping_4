@@ -14,7 +14,9 @@ public class SpringHibernateSample {
 
         ContactDao contactDao = ctx.getBean("contactDao", ContactDao.class);
 
-        Contact contact = contactDao.findById(1l);
+        listContactsWithDetail(contactDao.findAllWithDetail());
+
+        Contact contact = contactDao.findById(3l);
 
         contactDao.delete(contact);
 
